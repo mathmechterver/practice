@@ -1,0 +1,94 @@
+\documentclass[a4paper, 14pt]{extarticle}
+
+%% Language and font encodings
+\usepackage[english, russian]{babel}
+\usepackage[utf8]{inputenc}
+
+\usepackage[a4paper,top=1cm,bottom=1cm,left=1cm,right=1cm,margin=15mm, lmargin=30mm]{geometry}
+\title{practice2old}
+\author{samstikhin}
+\date{September 2018}
+
+\begin{document}
+\subsection*{5. Марковские цепи. База}
+\begin{enumerate}
+    \item Изобразить в виде графа марковскую цепь с матрицей переходных вероятностей P.
+
+\begin{center}
+    P = $\left ( \begin{array}{cccc}
+        1/2 & 1/3 & 1/6 & 0 \\
+        1/4 & 1/4 & 1/4 & 1/4\\
+        1/3 & 1/3 & 1/3 & 0\\
+        0 & 0 & 0 & 1
+    \end{array} \right )$
+\end{center}
+
+\item Найти матрицу перехода по 2м шагам по марковской цепи из 1 задачи и нарисовать для нее марковскую цепь.
+\item Пусть у нас есть агент, который движется по марковской цепи. $\omega_i \in X$(где $X$ - вершины графа марковской цепи, состояния) - местоположение агента в марковской цепи. $\omega = (\omega_0, \omega_1 \ldots \omega_i \ldots)$ - траектория движения агента. \newline
+Для Марковской цепи $P$ из 1 задачи и равномерного распределения вероятности $\mu = (1/4, 1/4, 1/4, 1/4)$ найти вероятности:
+\begin{enumerate}
+    \item $P(\omega_0 = x_2)$
+    \item $P(\omega_2 = x_2,\omega_1 = x_2,\omega_0 = x_1)$
+    \item $P(\omega_1 = x_2|\omega_0 = x_1)$
+    \item $P(\omega_3 = x_3|\omega_1 = x_1)$
+    \item $P(\omega_3 = x_3|\omega_0 = x_1,\omega_1 = x_2)$
+    \item $P(\omega_5 = x_3|\omega_6 = x_1)$
+    \item $P(\omega_3 = x_3|\omega_0 = x_1,\omega_4 = x_2)$
+    \item $P(\omega_n = x_3|\omega_0 = x_1, \omega_{2n} = x_1)$
+    \item $P(\omega_4 = x_3, \omega_3 = x_2|\omega_2 = x_1, \omega_5 = x_1)$
+\end{enumerate}
+ \item Используя понятие марковской цепи покажите, что $\forall P, Q$ - стохастических матриц $PQ$ - также является стохастической.
+
+\end{enumerate}
+
+\newpage
+\subsection*{5. Марковские цепи. Домашки}
+\begin{enumerate}
+
+\item Для пресловутой марковской цепи из 1 задачи из базы найти:
+\begin{enumerate}
+    \item (0.2)$P(\omega_2 = x_4)$
+    \item (0.2)$P(\omega_{2n} = x_3|\omega_n = x_1)$
+    \item (0.2)$P(\omega_2 = x_4|\omega_3 = x_3)$
+    \item (0.2)$P(\omega_3 = x_3|\omega_4 = x_1,\omega_5 = x_2)$
+    \item (0.2)$P(\omega_5 = x_2, \omega_3 = x_2|\omega_2 = x_1, \omega_3 = x_1,\omega_6 = x_1)$
+\end{enumerate}
+
+
+\item (1б)Рассмотрим цепь с 3 состояниями и матрицей
+
+\begin{center}
+    P = $\left ( \begin{array}{ccc}
+        0 & 1/2 & 1/2 \\
+        1/2 & 0 & 1/2 \\
+        1/2 & 1/2 & 0
+    \end{array} \right ).$
+\end{center}
+
+Найдите распределение вероятности состояний в момент времени 123, если в начальный момент времени распределение вероятностей: 
+\begin{enumerate}
+    \item $(1/3, 1/3, 1/3)$
+    \item $(1, 0, 0)$
+    \item $(a, b, c)$
+\end{enumerate}
+
+
+\item (1б)Лена часто ходит по магазинам. У неё есть $k$ скидочных карт из разных магазинов. Девушка хранит их в кошельке в виде стопки карт. После использования, $i-$я карта перемещается на верхушку стопки. Будем считать, что в каждый рассматриваемый момент времени $i$ Лена идёт в $i-$й магазин с вероятностью $p_i$, не зависящей от того, в каких магазинах она была до этого, и в каком порядке их обходила. Определите вероятности того, что спустя долгое время, карта с номером i будет лежать на вершине стопки.
+
+\item (2б) Рассмотрим цепь с 3 состояниями и матрицей
+
+\begin{center}
+    P = $\left ( \begin{array}{ccc}
+        1 - a & a & 0 \\
+        0 & 1 - a & a \\
+        a & 0 & 1 - a
+    \end{array} \right ).$
+\end{center}
+
+Начальное распределение: $\left ( 1, 0, 0 \right )$. Найдите $a$ такое, что вероятность оказаться в состоянии 2 на шаге 998244353 максимальна. Если таких $a$ несколько, выберите любое.
+
+\end{enumerate}
+
+
+
+\end{document}

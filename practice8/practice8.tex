@@ -1,0 +1,101 @@
+\documentclass[a4paper, 14pt]{extarticle}
+
+%% Language and font encodings
+\usepackage[english, russian]{babel}
+\usepackage[utf8]{inputenc}
+
+\usepackage[a4paper,top=2cm,bottom=2cm,left=2cm,right=1.5cm,margin=15mm, lmargin=30mm]{geometry}
+
+\title{practice6}
+\author{samstikhin}
+\date{September 2018}
+
+\begin{document}
+
+\section*{Зависимость. Ковариация.}
+\subsection*{Базовый}
+\begin{enumerate}
+    \item Пусть есть монетки, на одной стороне которых написано $1$, на другой $2$. 
+    Пусть $\xi$ - ДСВ суммы результатов бросков 2х монеток, $\mu$ - проиведение. 
+    Найдите медиану, матожидание случайных величин и сравните их между собой.
+    \item Докажите c помощью определений свойства мат.ожидания, дисперсии, ковариации.
+    \begin{enumerate}
+        \item $E(\alpha \xi) = \alpha E(\xi)$
+        \item $E(\xi + \mu) = E\xi + E\mu$
+        \item $E(\alpha\xi + \beta\mu) = \alpha E\xi + \beta E\mu$
+        \item $E(\xi\mu) = E\xi E\mu$ если независимы
+        \item Матожидание в схеме бернулли равно $np$.
+    \end{enumerate}
+    \item Докажите свойство  $D(\alpha \xi) = \alpha^2 D(\xi)$
+    \item В каком случае $D(\xi + \mu) = D\xi + D\mu$? А в каком не равно? На какую величину они будут отличаться в общем случае?
+    \item Докажите свойства ковариаций
+    \begin{enumerate}
+        \item $cov(\xi, \mu) = cov(\mu, \xi)$
+        \item $cov(\alpha\xi, \mu) = \alphacov(\xi, \mu)$
+        \item $cov(\xi_1 + \xi_2, \mu) = cov(\xi_1, \mu) + cov(\xi_2, \mu)$
+    \end{enumerate}
+    \item 
+Двумерное распределение пары целочисленных случайных величин $\xi$ и $\eta$ задаётся с помощью таблицы
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+ & $\xi = -1$ & $\xi = 0$ & $\xi = 1$\\
+\hline
+$\eta = -1$ & $1/8$ & $1/12$ & $7/24$\\ 
+\hline
+$\eta = 1$ & $5/24$ & $1/6$ & $1/8$\\ 
+\hline
+\end{tabular}
+
+\end{center}
+где в пересечении столбца $\xi = i$ и строки $\eta = j$ находится вероятность $P\lbrace{\xi = i, \eta = j\rbrace}$. Найти:
+
+\begin{enumerate}
+    \item Среднеквадратичное отклонение: $\sigma(\xi,\eta)$ 
+    \item Ковариацию: Cov $(\xi, \eta) $,
+    \item Корреляцию: r $(\xi, \eta)$
+\end{enumerate}
+
+	
+
+\end{enumerate}
+
+\newpage
+
+\section*{Еще больше инструментов}
+\subsection*{Домашка}
+\begin{enumerate}
+\item Возвращаемся к 6 домашке. Берем свою ДСВ и считаем для нее 
+\begin{enumerate}
+    \item (0.5)Медиану
+    \item (0.25)Среднеквадратичное отклонение
+\end{enumerate}
+Берем любую ДСВ другой группы и считаем для 2х ДСВ 
+\begin{enumerate}
+    \item (0.7) Ковариацию
+    \item (0.3) Корреляцию
+\end{enumerate}
+
+\item (0.5)Найти коэффициент корреляции между $\xi$ и $\xi^2$, если:
+    \begin{enumerate}
+        \item $P\lbrace{\xi = 0\rbrace} = 1/3, P\lbrace{\xi = 1\rbrace} = 1/2, P\lbrace{\xi = -1\rbrace} = 1/6$;
+        \item $P\lbrace{\xi = -2\rbrace} = P\lbrace{\xi = -1\rbrace} = P\lbrace{\xi = -1\rbrace} = P\lbrace{\xi = -1\rbrace} = 1/4$.
+    \end{enumerate}
+\item (0.5) Найти коэффициент корреляции между числом ``единиц'' и числом ``шестёрок'' при $n$ бросаниях правильной игральной кости.
+\item (0.75)Пусть $\xi_1, \xi_2, ... $ - независимые случайные величины, принимающие значения $1$ и $0$ с вероятностями $p$ и $1 - p$ соответственно. Найти среднее значение и дисперсию суммы $\zeta = \eta_1 + ... + \eta_n$, если:
+    \begin{enumerate}
+        \item $\eta_i = \xi_i \xi_{i + 1}$;
+        \item $\eta_i = \xi_i \xi_{i + 1} \xi_{i + 2}$;
+        \item
+            $\eta_i = 0$, если $\xi_i + \xi_{i + 1}$ - чётное число\\
+            $\eta_i = 1$, иначе
+    \end{enumerate}
+\item  (1)Произведение двух независимых равномерно распределенных на $\{0,1,\ldots,9\}$ однозначных чисел $\xi$ и $\eta$ можно записать в виде $\xi\eta=10\zeta_1+\zeta_2$. Найти законы распределения $\zeta_1$, и $\zeta_2$. Зависимы ли $\zeta_1$, и $\zeta_2$? %Севастьянов Чистяков 3.10
+
+	
+	
+	
+	
+\end{enumerate}
+\end{document}
