@@ -1,0 +1,93 @@
+\documentclass[a4paper, 14pt]{extarticle}
+%% Language and font encodings
+\usepackage[english, russian]{babel}
+\usepackage[utf8]{inputenc}
+
+\usepackage[a4paper,top=2cm,bottom=2cm,left=2cm,right=1.5cm,margin=15mm, lmargin=30mm]{geometry}
+
+\title{practice12}
+\author{samstikhin}
+\date{September 2018}
+
+\begin{document}
+
+\section*{Непрерывные случайные величины. Плотность.}
+\subsection*{Классная работа}
+\begin{enumerate}
+\item Случайная величина $\xi$ имеет функцию распределения $F_{\xi}$, определенную равенством
+$$F_\xi(x) =\left\{
+	\begin{array}{cc}
+	4^{-x}, & x\leq 0 \\
+	0, & x>0
+	\end{array}\right.$$
+Найдите вероятности 
+$P(\xi \geq -2)$ и $P(-1 < \xi < 0)$. Найдите плотность $\rho_{\xi}(x)$.
+\item Случайная величина $\xi$ имеет непрерывную функцию распределения $F_{\xi}(x)$. 
+Найдите функцию распределения случайной величины $\eta=3-2\xi$.
+\item Вспомним задачу о двух лыжниках. 2 лыжника условились о встрече в промежуток времени $[0,1]$.
+    Момент прихода на встречу каждым выбирается равновероятно. 
+    Пусть $\theta = |t_1 - t_2|$. Найдите:
+    \begin{enumerate}
+    \item функцию распределения $F_{\theta}(x)$
+    \item плотность вероятности $\rho_{\theta}(x)$
+    \item матожидание $E\theta$
+    \item дисперсию $E\theta$
+    \end{enumerate}
+\item Функция распределения случайной величины $\xi$ имеет вид $F_{\xi}(x)=a + b\arctg(x)$. 
+Найдите:
+\begin{enumerate}
+\item параметры $a$ и $b$
+\item плотность вероятности.
+\end{enumerate} 
+
+\item Дана плотность вероятности $\rho_{\xi} = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}$.
+Доказать что:
+\begin{enumerate}
+\item $E_{\xi}= \mu$
+\item $\sigma_{\xi}= \sigma$
+
+\end{enumerate} 
+
+
+
+\newpage
+
+\end{enumerate}
+\section*{Непрерывные случайные величины. Плотность.}
+\subsection*{Домашняя работа}
+\begin{enumerate}
+\item (0.5б)В квадрате $[0,1]^2$ наугад выбирается точка $\omega=(\omega_1,\omega_2)$. Случайная величина $\xi$ задается равенством $\xi(\omega)=\omega_1+\omega_2$. Найдите функцию распределения $F_{\xi}(x)$.
+	\item (0.5б)Случайная величина $\xi$ имеет непрерывную функцию распределения $F_{\xi}(x)$. 
+Найдите функцию распределения случайной величины $\eta=1-3\xi^2$.
+\item  (1б)Плотность распределения случайной величины $\xi$ задана формулой
+	$$f_\xi(x) =\left\{
+	\begin{array}{cc}
+	Cx^{-3/2}, & x\geq 1 \\
+	0, & x<1
+	\end{array}\right.$$
+	Найти: \begin{enumerate}
+		\item постоянную $C$; 
+		\item плотность распределения
+	$\eta=1/\xi$ 
+		\item $P\{0,1<\eta<0,2\}$.
+	\end{enumerate}
+	\item (0.75б)Случайная величина $\xi$ имеет распределение Коши с плотностью $\rho_{\xi}(x)=\frac{1}{\pi(1+x^2)}$. 
+Найдите плотность и функцию распределения случайной величины $\eta = \frac{1}{1+\xi^2}$. 
+	\item (0.75б)Случайная точка $A$ имеет в круге радиуса $R$
+	равномерное распределение. Найти математическое
+	ожидание и дисперсию расстояния  точки $A$ от центра.
+	\item (2б)3 лыжника условились о встрече в промежуток времени $[0,1]$. 
+	Момент прихода на встречу каждым выбирается наудачу в пределах
+	указанного часа. $\theta = \max{(|t_1-t_2|,|t_2 - t_3|,|t_1-t_3|)}$
+	Найдите:
+    \begin{enumerate}
+    \item функцию распределения $F_{\theta}(x)$
+    \item плотность вероятности $\rho_{\theta}(x)$
+    \item матожидание $E\theta$
+    \item дисперсию $E\theta$
+    \end{enumerate}
+\end{enumerate}	
+
+\end{document}
+
+
