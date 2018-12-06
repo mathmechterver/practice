@@ -1,0 +1,87 @@
+\documentclass[a4paper, 14pt]{extarticle}
+%% Language and font encodings
+\usepackage[english, russian]{babel}
+\usepackage[utf8]{inputenc}
+
+\usepackage[a4paper,top=2cm,bottom=2cm,left=2cm,right=1.5cm,margin=15mm, lmargin=30mm]{geometry}
+
+\title{practice15}
+\author{samstikhin}
+\date{September 2018}
+
+\begin{document}
+
+\section*{Условное матожидание}
+\subsection*{Классная работа}
+Важные формулы:
+$$\rho_{X|Y}(x|y_0) = \frac{\rho_{X,Y}(x, y_0)}{\rho_{Y}(y_0)}$$
+$$\rho_{X}(x) = \int_{-\infty}^{\infty} \rho_{X|Y}(x|y)\rho_{Y}(y)dy$$
+$$E(X|Y=y_0) = \int_{-\infty}^{\infty}x\rho_{X|Y}(x|y_0)dx$$
+$$E(X|Y)(y) = \int_{-\infty}^{\infty}x\rho_{X|Y}(x|y)dx$$
+\begin{enumerate}
+\item Пусть совместная плотность случайного вектора $(\xi, \eta)$ равна:
+$$\rho_{\xi,\eta}(x,y) =\left\{
+	\begin{array}{cc}
+	xe^{-x(y+1)}, & 0\leq x,y\\
+	0, & otherwise
+	\end{array}\right.$$
+Найти:
+\begin{enumerate}
+\item одномерные(маргинальные распределения) $\xi$ и $\eta$
+\item условные плотности $\xi$ по $\eta$ и $\eta$ по $\xi$
+\end{enumerate}
+\item Найти $E(\xi|\eta)$, если совместная плотность случайного вектора
+$(\xi, \eta)$ равна:
+$$\rho_{\xi,\eta}(x,y) =\left\{
+	\begin{array}{cc}
+	4xy, & 0\leq x\leq 1, 0\leq y\leq 1 \\
+	0, & otherwise
+	\end{array}\right.$$
+\item Пусть случайная величина $\xi$ имеет стандартное нормальное
+распределение. Найти $E(\xi|\xi^2)$
+\item Пусть независимые случайные величины $\xi$ и $\eta$ имеют геометрическое
+распределение с параметром p каждая. Найти условное
+распределение $\rho(\xi = k|\xi + \eta = n)$.
+\end{enumerate}
+\newpage
+
+\section*{Условное матожидание}
+\subsection*{Домашняя работа}
+\begin{enumerate}
+\item Пусть $\xi$ и $\eta$ — независимые случайные величины, имеющие
+равномерное распределение в отрезке [0, 1]. Найти:
+\begin{enumerate}
+\item (0.5)$E(\xi|\xi + \eta)$
+\item (0.5)$E(\xi^2 - \eta^2 |\xi + \eta)$
+\item (0.5)$E(\xi - \eta|\xi + \eta)$
+\item (0.5)$E(\xi|\xi + 2\eta)$
+\end{enumerate}
+
+\item Пусть случайная величина $\xi$ имеет показательное распределение 
+с параметром 1, а t > 0. Найти:
+\begin{enumerate}
+\item (0.5)$E(\xi| min(\xi, t))$
+\item (0.5)$E(\xi| max(\xi, t))$
+\end{enumerate}
+\item (2)Пусть независимые случайные величины $\xi$ и $\eta$ имеют стандартное
+ нормальное распределение. Найти $E(\xi^2 + \eta^2 |\xi + \eta)$.
+\item (1)Найти $E(\xi|\eta)$, если совместная плотность случайного вектора
+$(\xi, \eta)$ равна:
+	$$\rho_{\xi,\eta}(x,y) =\left\{
+	\begin{array}{cc}
+	\frac{1+9x^2y^2}{8}, & -1\leq x,y\leq 1\\
+	0, & otherwise
+	\end{array}\right.$$
+
+\item Пусть $\xi_1, \ldots \xi_n$ — независимые случайные величины, имеющие
+ равномерное распределение в отрезке $[0, 1]$. Найти:
+\begin{enumerate}
+\item (0.5)$E(\xi_1 | max(\xi_1, \ldots \xi_n))$
+\item (0.5)$E(\xi_1 | min(\xi_1, \ldots \xi_n))$
+\end{enumerate}
+
+\end{enumerate}	
+
+\end{document}
+
+
