@@ -11,12 +11,13 @@
 
 \begin{document}
 
-\section*{Условное матожидание}
+\section*{Совместное распределение.Условное матожидание}
 \subsection*{Классная работа}
 Важные формулы:
+$$F_{\xi,\eta}(x,y) = P(\xi \leq x, \eta \leq y) = \int_{-\infty}^{x}\int_{-\infty}^{y}\rho_{\xi,\eta}(x,y)dxdy$$
+$$\rho_{\eta}(x) = \frac{\rho_{\xi}(g^{-1}(x)}{|g'(g^{-1}(x))|}~~~~~\eta = g(\xi)~~~~~g - monotonic$$
 $$\rho_{X|Y}(x|y_0) = \frac{\rho_{X,Y}(x, y_0)}{\rho_{Y}(y_0)}$$
 $$\rho_{X}(x) = \int_{-\infty}^{\infty} \rho_{X|Y}(x|y)\rho_{Y}(y)dy$$
-$$E(X|Y=y_0) = \int_{-\infty}^{\infty}x\rho_{X|Y}(x|y_0)dx$$
 $$E(X|Y)(y) = \int_{-\infty}^{\infty}x\rho_{X|Y}(x|y)dx$$
 \begin{enumerate}
 \item Пусть совместная плотность случайного вектора $(\xi, \eta)$ равна:
@@ -29,33 +30,37 @@ $$\rho_{\xi,\eta}(x,y) =\left\{
 \begin{enumerate}
 \item одномерные(маргинальные распределения) $\xi$ и $\eta$
 \item условные плотности $\xi$ по $\eta$ и $\eta$ по $\xi$
+\item $E(\xi|\eta)$, $E(\eta|\xi)$
 \end{enumerate}
-\item Найти $E(\xi|\eta)$, если совместная плотность случайного вектора
+
+\item Пусть $\xi$ и $\eta$ — независимые случайные величины, имеющие
+равномерное распределение в отрезке [0, 1]. Найти:
+\begin{enumerate}
+\item $E(\xi|\xi + \eta)$
+\item $E(\xi^2 - \eta^2 |\xi + \eta)$
+\end{enumerate}
+
+\item Пусть случайная величина $\xi$ имеет стандартное нормальное
+распределение. Найти $E(\xi|\xi^2)$
+\end{enumerate}
+\newpage
+
+\section*{Совместное распределение.Условное матожидание}
+\subsection*{Домашняя работа}
+\begin{enumerate}
+\item Пусть $\xi$ и $\eta$ — независимые случайные величины, имеющие
+равномерное распределение в отрезке [0, 1]. Найти:
+\begin{enumerate}
+\item (0.5)$E(\xi - \eta|\xi + \eta)$
+\item (0.5)$E(\xi|\xi + 2\eta)$
+\end{enumerate}
+\item (0.5)Найти $E(\xi|\eta)$, если совместная плотность случайного вектора
 $(\xi, \eta)$ равна:
 $$\rho_{\xi,\eta}(x,y) =\left\{
 	\begin{array}{cc}
 	4xy, & 0\leq x\leq 1, 0\leq y\leq 1 \\
 	0, & otherwise
 	\end{array}\right.$$
-\item Пусть случайная величина $\xi$ имеет стандартное нормальное
-распределение. Найти $E(\xi|\xi^2)$
-\item Пусть независимые случайные величины $\xi$ и $\eta$ имеют геометрическое
-распределение с параметром p каждая. Найти условное
-распределение $\rho(\xi = k|\xi + \eta = n)$.
-\end{enumerate}
-\newpage
-
-\section*{Условное матожидание}
-\subsection*{Домашняя работа}
-\begin{enumerate}
-\item Пусть $\xi$ и $\eta$ — независимые случайные величины, имеющие
-равномерное распределение в отрезке [0, 1]. Найти:
-\begin{enumerate}
-\item (0.5)$E(\xi|\xi + \eta)$
-\item (0.5)$E(\xi^2 - \eta^2 |\xi + \eta)$
-\item (0.5)$E(\xi - \eta|\xi + \eta)$
-\item (0.5)$E(\xi|\xi + 2\eta)$
-\end{enumerate}
 
 \item Пусть случайная величина $\xi$ имеет показательное распределение 
 с параметром 1, а t > 0. Найти:
