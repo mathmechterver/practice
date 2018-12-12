@@ -17,8 +17,8 @@
 $$F_{\xi,\eta}(x,y) = P(\xi \leq x, \eta \leq y) = \int_{-\infty}^{x}\int_{-\infty}^{y}\rho_{\xi,\eta}(x,y)dxdy$$
 $$\rho_{\eta}(x) = \frac{\rho_{\xi}(g^{-1}(x)}{|g'(g^{-1}(x))|}~~~~~\eta = g(\xi)~~~~~g - monotonic$$
 $$\rho_{\xi|\eta}(x|y_0) = \frac{\rho_{\xi,\eta}(x, y_0)}{\rho_{\eta}(y_0)}$$
-$$F_{\xi|\eta}(x|y) = P(\xi<x|\eta<y) = \frac{P(\xi<x, \eta<y)}{P(\eta<y)} = \frac{F_{\xi,\eta}(x,y)}{F_\eta(y)} = 
-\frac{\int_{-\infty}^{x}\int_{-\infty}^{y}\rho_{\xi,\eta}(u,v)dudv}{\int_{-\infty}^{y}\rho_{\eta}(w)dw}$$
+$$F_{\xi|\eta}(x|y) = \int_{-\infty}^{x} (\frac{\int_{-\infty}^{y}\rho_{\xi,\eta}(u,v)dv}{\int_{-\infty}^{y}\rho_{\eta}(w)dw})du = 
+\int_{-\infty}^{x}\rho_{\xi|\eta}(u,y)du$$
 $$\rho_{\xi}(x) = \int_{-\infty}^{\infty} \rho_{\xi|\eta}(x|y)\rho_{\eta}(y)dy$$
 $$E(X|Y)(y) = \int_{-\infty}^{\infty}x\rho_{X|Y}(x|y)dx$$
 \begin{enumerate}
