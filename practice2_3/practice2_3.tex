@@ -1,0 +1,123 @@
+\documentclass[a4paper, 14pt]{extarticle}
+
+%% Language and font encodings
+\usepackage[english, russian]{babel}
+\usepackage[utf8]{inputenc}
+
+\usepackage[a4paper,top=1cm,bottom=1cm,left=1cm,right=1.5cm,margin=10mm, lmargin=15mm]{geometry}
+
+\usepackage{amsfonts,amssymb,amsmath}
+\usepackage{nopageno, comment}
+\usepackage{cmap}
+\usepackage{ifthen}
+\usepackage{indentfirst}
+\usepackage{float}
+\usepackage{tikz}
+\usepackage{wrapfig}
+
+\title{practice2_2}
+\author{Sam Stikhin}
+\date{February 2019}
+
+\begin{document}
+
+\section*{2.3 Сходимости случайных величин.}
+\subsection*{Пререквизиты}
+\subsubsection*{Леммы Борелля-Кантелли}
+\textbf{1-я}
+
+Пусть есть последовательность (необязательно независимых) событий $\{A_i\}_{i=1}^{\infty}$
+
+Обозначим событие $A = \bigcap_{n=1}^{\infty}\bigcup_{i=n}^{\infty}A_i$
+
+Пусть ряд сходится $\sum_{i=1}^{\infty}P(A_i) < \infty$
+
+Тогда $P(A) = 0$
+
+\textbf{2-я}
+
+Пусть есть последовательность совместно независимых событий $\{A_i\}_{i=1}^{\infty}$
+
+Обозначим событие $A = \bigcap_{n=1}^{\infty}\bigcup_{i=n}^{\infty}A_i$
+
+Пусть ряд расходится $\sum_{i=1}^{\infty}P(A_i) \to \infty$
+
+Тогда $P(A) = 1$
+\subsubsection*{Сходимости}
+\textbf{Почти наверное}
+$$\xi_n \overset{\textrm{п.н.}}{\to} \xi$$
+
+Если
+
+$$P(\{ \omega \in \Omega : \xi_n(\omega) \underset{n \to \infty}{\to} \xi(\omega) \}) = 1$$ 
+
+или
+
+$$P(\{ \omega \in \Omega : \xi_n(\omega) \underset{n \to \infty}{\not\to} \xi(\omega) \}) = 0$$ 
+
+или эквивалентно
+
+$$\forall \varepsilon > 0 : P(\{ \omega \in \Omega : \sup_{k \geq n} |\xi_k(\omega)-\xi(\omega)| > \varepsilon \}) \underset{n \to \infty}{\to} 0$$
+
+\textbf{По вероятности}
+$$\xi_n \overset{\mathbb{P}}{\to} \xi$$ 
+
+Если
+
+$$\forall \varepsilon > 0 : P(\{\omega \in \Omega : |\xi_n(\omega)-\xi(\omega)| > \varepsilon \}) \underset{n \to \infty}{\to} 0$$
+
+\subsubsection*{Усиленный Закон больших чисел}
+Говорят, что последовательность случайных величин (возможно разнораспределенных) $\{\xi_i\}_{i=1}^{\infty}$ с конечными первыми моментами удовлетворяет закону больших чисел (ЗБЧ), если
+$$\frac{\sum_{i=1}^n\xi_i}{n} - \frac{\sum_{i=1}^n\mathbb{E}\xi_i}{n} \overset{\mathbb{P}}{\to} 0$$
+	
+	  
+\newpage
+\section*{2.3 Сходимости случайных величин.}
+\subsection*{Практика}
+\begin{enumerate}
+
+\item Точка путешествует по целым числам. Каждый раз она шагает на $1$, с вероятностью $p$ — вправо, с вероятностью $1-p$ — влево. 
+Докажите, что при $p \neq \frac{1}{2}$ вероятность того, что она вернется в исходное положение бесконечное число раз равна $0$.
+
+\item Пусть $\xi_n \to \xi$ п.н и $g(x)$ - непрерывная функция. Докажите, что $g(\xi_n) \to g(\xi)$ п.н.
+
+\item Пусть $(\xi_n - \xi)^2 \to 0$ п.н. Доказать, что $\xi_n \to \xi$ п.н.
+
+\item Пусть $\xi_n \overset{\mathbb{P}}{\to} \xi$ и $g(x)$ - непрерывная, дифференцируемая и монотонно возрастающая функция. Докажите, что $g(\xi_n) \overset{\mathbb{P}}{\to} g(\xi)$.
+
+\item Пусть $\xi_n$ принимает значения $2^n$, $- 2^n$ и $0$ с вероятностями $2^{-(2n+1)}$, $2^{-(2n+1)}$ и $1 - 2^{-2n}$ соответственно. 
+Докажите, что для $\xi_n$ выполняется ЗБЧ.
+
+
+\end{enumerate}
+\newpage
+\subsection*{Домашка}
+\begin{enumerate}
+\item (2) Точка путешествует по целым числам. Каждый раз она шагает на $1$, с вероятностью $p$ — вправо, с вероятностью $1-p$ — влево. 
+Докажите, что при $p = \frac{1}{2}$ вероятность того, что она вернется в исходное положение бесконечное число раз равна $1$.
+
+
+\item Пусть $\xi_n \overset{\textrm{п.н.}}{\to} 1$ и $\mu_n \overset{\textrm{п.н.}}{\to} 1$. 
+Тогда 
+\begin{enumerate}
+\item (1)$\xi_n + \mu_n \overset{\textrm{п.н.}}{\to} 2$
+\item (1)$\xi_n\mu_n \overset{\textrm{п.н.}}{\to} 1$
+\end{enumerate}
+
+\item (2)Пусть $\xi_n$ - последовательность независимых и равномерно распределенных на [0,1] случайных величин. 
+Найдите распределение случайной величины $m_n=\min (\xi_1,\ldots,\xi_n)$. Докажите, что $m_n$ стремится почти наверное к 0
+
+\item (1) Пусть $\xi_n$ принимает значения $n$, $-n$ и $0$ с вероятностями $\frac{1}{2n^2}$, $\frac{1}{2n^2}$ и $1 - \frac{1}{n^2}$.
+Выполнен ли для этой последовательности закон больших чисел? 
+
+\item (1)Пусть $\xi_n \overset{\textrm{п.н.}}{\to} 1$ и $\mu_n \overset{\textrm{п.н.}}{\to} 1$. 
+Тогда $\frac{1}{\xi_n + \mu_n} \overset{\mathbb{P}}{\to} \frac{1}{2}$
+
+\item (4) Точка начинает путешествие по целочисленной решетке в $\mathbb{R}^2$ с вероятностями пойти в любое направление $\neq \frac{1}{4}$.
+Докажите что с вероятностью 1, точка когда-нибудь вернется в начальную точку.
+
+
+
+\end{enumerate}
+
+\end{document}

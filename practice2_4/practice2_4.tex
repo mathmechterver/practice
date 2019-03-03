@@ -1,0 +1,64 @@
+\documentclass[a4paper, 14pt]{extarticle}
+
+%% Language and font encodings
+\usepackage[english, russian]{babel}
+\usepackage[utf8]{inputenc}
+
+\usepackage[a4paper,top=1cm,bottom=1cm,left=1cm,right=1.5cm,margin=10mm, lmargin=15mm]{geometry}
+
+\usepackage{amsfonts,amssymb,amsmath}
+\usepackage{nopageno, comment}
+\usepackage{cmap}
+\usepackage{ifthen}
+\usepackage{indentfirst}
+\usepackage{float}
+\usepackage{tikz}
+\usepackage{wrapfig}
+
+\title{practice2_4}
+\author{Sam Stikhin}
+\date{February 2019}
+
+\begin{document}
+
+\section*{2.4 ЦПТ. Локальная и интегральная т. Муавра-Лапласа}
+\subsection*{Пререквизиты}
+\textbf{Локальная т. Муавра-Лапласа} Вероятность $m$ успехов в схеме бернулли из n испытаний примерно равна:
+$$P_n(m)  \approx \frac{1}{\sqrt{npq}} \phi(x)$$
+
+$$\phi(x) = \frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}}$$
+$$x = \frac{m - n}{\sqrt{npq}}$$
+чем ближе вероятность к 0.5, тем точнее результат 
+
+
+\textbf{Интегральная т. Муавра-Лапласа}
+$\xi$ - количество успехов в схеме Бернулли. Вероятность от $k$ до $m$ успехов в схеме бернулли из n испытаний примерно равна
+$$P_n(k\leq \xi \leq m)  \approx  \Phi\Big(\frac{m-n\mu}{\sqrt{n}\sigma}\Big) - \Phi\Big(\frac{k-n\mu}{\sqrt{n}\sigma}\Big)$$
+
+\subsubsection{Неравенство}
+$$\Phi(x) = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{x}e^{-\frac{t^2}{2}}dt$$
+
+\textbf{ЦПТ}: Пусть есть бесконечная последовательность одинаково распределенных случайных величин сл. вел. $\xi$, имеющих матожидание $\mu$ и дисперсию $\sigma$ тогда
+$$\frac{S_n - \mu n}{\sqrt{n}\sigma} \underset{n \to \infty}{\to} N(0,1)$$
+где $S_n = \xi_1 + \ldots + \xi_n$
+
+\newpage
+\section*{2.4 ЦПТ. Локальная и интегральная т. Муавра-Лапласа}
+\subsection*{Практика}
+\begin{enumerate}
+\item В театре 1600 мест и 2 гардероба. Посетитель выбирает гардероб равновероятно. Сколько в них должно быть мест, чтобы их могло не хватить не чаще раз в месяц.
+\item Найти вероятность выйграть в рулетке со ставками на красное и черное, если сделано 200 ставок.
+
+\end{enumerate}
+\newpage
+\section*{2.4 ЦПТ. Локальная и интегральная т. Муавра-Лапласа}
+\subsection*{Домашка}
+\begin{enumerate}
+\item Имеется 1000 параллепипедов, у каждого из которых длинакаждой стороны может принимать значения
+$\frac{1}{2}$ и 1 с вероятностями 0,3 и 0,7 соответственно. Пусть V - суммарный объем этих параллепипедов. 
+Оценить вероятность того, что $580< V <605$.
+
+\end{enumerate}
+
+\end{document}
+

@@ -1,0 +1,225 @@
+\documentclass[a4paper, 14pt]{extarticle}
+
+%% Language and font encodings
+\usepackage[english, russian]{babel}
+\usepackage[utf8]{inputenc}
+
+\usepackage[a4paper,top=1cm,bottom=1cm,left=1cm,right=1.5cm,margin=10mm, lmargin=15mm]{geometry}
+
+\usepackage{amsfonts,amssymb,amsmath}
+\usepackage{nopageno, comment}
+\usepackage{cmap}
+\usepackage{ifthen}
+\usepackage{indentfirst}
+\usepackage{float}
+\usepackage{tikz}
+\usepackage{wrapfig}
+
+
+\begin{document}
+
+\section{Тервер Мин}
+\subsection{Комбинаторика}
+
+$$C_n^k = \frac{n!}{(n-k)!k!}$$
+
+$$C_n^k \sim \frac{n^k}{k!}$$
+
+$$n! \sim \sqrt{2\pi n}\Big(\frac{n}{e}\Big)^n$$
+
+\subsection{Классическая вероятность}
+
+$$P(A) = \frac{m}{n} = \frac{\sum_{\omega \in \Omega}1_{\omega \in A}}{|\Omega|} = \frac{\textrm{Кол-во хороших элементарных событий}}{\textrm{Кол-во всех элементарных событий}}$$
+
+$A$ и $B$ - несовместны $\Leftrightarrow P(AB) = 0$
+
+$A$ и $B$ - независимы $\Leftrightarrow P(AB) = P(A)P(B)$
+
+
+\subsection{Геометрическая вероятность}
+
+$$P(A) = \frac{\textrm{Площадь покрывающая событие А}}{\textrm{Вся площадь}}$$
+
+\subsection{Колмогоровская вероятность}
+
+$$F_{\xi}(x) = P(\xi < x)$$
+
+$$\rho_{\xi}(x) = \frac{dF_\xi(x)}{dx}$$
+
+$$F_{\xi}(x) = \int_{\infty}^{\infty}\rho(x)dx$$
+
+\subsection{Свойства матожидания и дисперсии}
+
+$$\mathbb{E}\xi = \sum_{i=1}^{n} x_i p(\xi=x_i)$$
+
+$$\mathbb{E}\xi = \int_{-\infty}^{\infty} x p(\xi=x)dx$$
+
+$$\mathbb{E}(\alpha \xi + \beta \mu) = \alpha \mathbb{E}\xi + \beta \mathbb{E}\mu$$
+
+$$\mathbb{D}\xi = \mathbb{E}\xi^2 - (\mathbb{E}\xi)^2$$
+
+$$\mathbb{E}(\alpha \xi + \beta \mu) = \alpha \mathbb{E}\xi + \beta \mathbb{E}\mu$$
+
+$$cov(\xi, \mu) = \mathbb{E}\xi\mu - \mathbb{E}\xi\mathbb{E}\mu$$
+
+$$\mathbb{D}(\alpha\xi) = \alpha^2 \mathbb{D}\xi $$
+
+$$\mathbb{D}(\xi + \mu) = \mathbb{D}\xi + \mathbb{D}\mu + cov(\xi, \mu)$$
+
+\subsubsection{Для независимых}
+
+$$\mathbb{E}\xi\mu = \mathbb{E}\xi\mathbb{E}\mu$$
+
+$$cov(\xi, \mu) = 0$$
+
+$$\mathbb{D}(\xi + \mu) = \mathbb{D}\xi + \mathbb{D}\mu$$
+
+
+
+\section{Условная вероятность}
+
+$$P(A|B) = \frac{P(AB)}{P(B)}$$
+
+$$P(A|B) = \frac{P(B|A)P(A)}{P(B)}$$
+
+Если $H_i$ - попарно несовместны.
+$$P(A) = \sum_{i=1}^{n}P(A|H_i)P(H_i)$$
+
+$$\mathbb{E}(\xi|A) = \frac{\mathbb{E}(\xi1_{A})}{P(A)}$$
+
+$$E\xi = \sum_{i=1}^{n}\mathbb{E}(\xi|H_i)P(H_i)$$
+
+\section{Биноминальное распределение}
+
+$$P(\xi = k) = C_n^kp^kq^{n-k}$$
+
+$$\mathbb{E}\xi = np~~~\mathbb{D}\xi = npq$$
+
+
+\section{Распределение Пуассона}
+
+$$C_n^kp^kq^{n-k} \sim \frac{(np)^{-k}e^{-np}}{k!} = \frac{\lambda^{-k}e^{-\lambda}}{k!}$$
+
+$$\mathbb{E}\xi = \lambda~~~\mathbb{D}\xi = \lambda$$
+
+
+\section{Экспоненциальное распределение}
+
+$$F_{\xi}(x) = 1 - e^{-\lambda x}$$
+
+$$\rho_{\xi}(x) = \lambda e^{-\lambda x}$$
+
+$$\mathbb{E}\xi = \lambda^{-1}~~~\mathbb{D}\xi = \lambda^{-2}$$
+
+\section{Нормальное распределение}
+
+$$\rho_{\xi \sim N(\mu, \sigma)}(x) = \frac{1}{\sqrt{2\pi}}e^{\frac{(x-\mu)^2}{2\sigma^2}}$$
+
+$$\mathbb{E}\xi = \mu~~~\mathbb{D}\xi = \sigma^2$$
+
+\section{Неравенства}
+\subsection{Маркова}
+$$P(\xi \geq a) \leq \frac{E\xi}{a}$$
+
+\subsection{Чебышева}
+$$P(|\xi - E\xi| \geq a) \leq \frac{D\xi}{a^2}$$
+
+\section{Простой ЗБЧ. Закон Больших Чисел}
+$$P\left(\left|\frac{X_1 + \ldots + X_n}{n} - EX_1\right| \geq a\right) \leq \frac{DX_1}{na^2}$$
+
+\section{Леммы Борелля-Кантелли}
+\subsection{1-я}
+
+Пусть есть последовательность (необязательно независимых) событий $\{A_i\}_{i=1}^{\infty}$.
+
+Обозначим событие
+
+$$A = \lim_{n\to \infty}\bigcap_{n=1}^{\infty}\bigcup_{i=n}^{\infty}A_i$$
+
+Пусть ряд сходится
+
+$$\sum_{i=1}^{\infty}P(A_i) < \infty$$
+
+Тогда
+
+$$P(A) = 0$$
+
+\subsection{2-я}
+
+Пусть есть последовательность совместно независимых событий $\{A_i\}_{i=1}^{\infty}$.
+
+Обозначим событие 
+
+$$A = \lim_{n\to \infty}\bigcap_{n=1}^{\infty}\bigcup_{i=n}^{\infty}A_i$$
+
+Пусть ряд расходится
+
+$$\sum_{i=1}^{\infty}P(A_i) \to \infty$$
+
+Тогда
+
+$$P(A) = 1$$
+
+\section{Сходимости}
+\subsection{Почти наверное}
+$$\xi_n \overset{\textrm{п.н.}}{\to} \xi$$
+
+Если
+
+$$P(\{ \omega \in \Omega : \xi_n(\omega) \underset{n \to \infty}{\to} \xi(\omega) \}) = 1$$ 
+
+или
+
+$$P(\{ \omega \in \Omega : \xi_n(\omega) \underset{n \to \infty}{\not\to} \xi(\omega) \}) = 0$$ 
+
+или эквивалентно
+
+$$\forall \varepsilon > 0 : P(\{ \omega \in \Omega : \sup_{k \geq n} |\xi_k(\omega)-\xi(\omega)| > \varepsilon \}) \underset{n \to \infty}{\to} 0$$
+
+\subsection{По вероятности}
+$$\xi_n \overset{\mathbb{P}}{\to} \xi$$ 
+
+Если
+
+$$\forall \varepsilon > 0 : P(\{\omega \in \Omega : |\xi_n(\omega)-\xi(\omega)| > \varepsilon \}) \underset{n \to \infty}{\to} 0$$
+
+\subsection{В p-среднем}
+$$ \xi_n \overset{L^p}{\to} \xi~~~~p > 0$$
+
+Если
+
+$$\mathbb{E}|\xi_n(\omega)-\xi(\omega)|^p \underset{n \to \infty}{\to} 0$$
+
+\subsection{Слабая. По распределению}
+$$\xi_n \overset{d}{\to} \xi$$
+
+Если $\forall y\in\mathbb{R}$, в которых $F_{\xi}(y)$ непрерывна
+
+$$F_{\xi_n}(y) \underset{n \to \infty}{\to} F_{\xi}(y)$$
+
+При этом:  
+
+Почти наверное $\Rightarrow$ По вероятности
+
+В среднем $\Rightarrow$ По вероятности
+
+По вероятности $\Rightarrow$ Слабая 
+
+
+\section{т. Муавра-Лапласа}
+
+$$P(\xi_n = m)  \approx \frac{1}{\sqrt{npq}} \phi(\frac{m-np}{\sqrt{npq}})$$
+
+$$\phi(x) = \frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}}$$
+
+$$P(k \leq \xi_n \leq m)  \approx \frac{1}{\sqrt{npq}} \Big(\Phi(\frac{m-np}{\sqrt{npq}}) - \Phi(\frac{k-np}{\sqrt{npq}})\Big)$$
+
+$$\Phi(x) = \frac{1}{\sqrt{2\pi}}\int e^{-\frac{x^2}{2}}dx$$
+
+
+%%\section{ЦПТ}
+%%$$\frac{S_n - \mathbb{E}S_n}{\sqrt{DS_n}} \to N(0,1)$$
+
+\end{document}
+
+
