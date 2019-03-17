@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.2.17)  12 MAR 2019 15:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.2.17)  13 MAR 2019 14:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1145,10 +1145,10 @@ Missing character: There is no d in font msbm10!
 Missing character: There is no d in font msbm10!
  [2] [3] [4] (./practice2_5.aux) ) 
 Here is how much of TeX's memory you used:
- 14400 strings out of 492982
- 269434 string characters out of 6134896
+ 14404 strings out of 492982
+ 269486 string characters out of 6134896
  316207 words of memory out of 5000000
- 17614 multiletter control sequences out of 15000+600000
+ 17618 multiletter control sequences out of 15000+600000
  14361 words of font info for 35 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,6n,54p,704b,173s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1166,7 +1166,7 @@ ype1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm
 </usr/share/texmf/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/texmf/fo
 nts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-
 super/sfrm1440.pfb>
-Output written on practice2_5.pdf (4 pages, 151932 bytes).
+Output written on practice2_5.pdf (4 pages, 155431 bytes).
 PDF statistics:
  82 PDF objects out of 1000 (max. 8388607)
  56 compressed objects within 1 object stream

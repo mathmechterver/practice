@@ -24,25 +24,23 @@
 \section*{2.5 Слабая сходимость. ЗБЧ. ЦПТ.}
 \subsection*{Пререквизиты}
 \subsubsection*{Сходимость. Слабая. По распределению.}
+$\xi_n \overset{d}{\to} \xi$, если для любой непрерывной функции $\phi(x)$ определенной на $\mathbb{R}$   
 $$\int_{\Omega}\phi(\xi_n(\omega))\mathbb{P}(d\omega) \to \int_{\Omega}\phi(\xi(\omega))\mathbb{P}(d\omega)$$
 
 или
 
-$$\int_{\mathbb{R}}\phi(x)F_n(dx) \to \int_{\mathbb{R}}\phi(x)F_n(dx)$$
+$$\int_{\mathbb{R}}\phi(x)\mu_n(dx) \to \int_{\mathbb{R}}\phi(x)\mu_n(dx)$$
 
-\subsubsection*{Очень полезная лемма}
-Если $\xi_n \overset{d}{\to} const$, то $\xi_n \overset{\mathbb{P}}{\to} const$
+или
+
+$$\forall x F_{\xi_n}(x) \to F_{\xi}(x) ~~~~ F_{\mu}(x) = \mu((-\infty, x))$$
+
 
 \subsubsection*{Сходимость. В среднем.}
 $$\mathbb{E}|\xi_n - \xi|^p \to 0$$
 
 \subsubsection*{Характеристические функции}
-$$\phi_\xi(t) = \mathbb{E}(e^{it\xi})$$
-
-\subsubsection*{Закон больших чисел.}
-Для \textbf{(необязательно независимых и необязательно одинаковораспределенных)} 
-$\{\xi_i\}_{i=1}^{\infty}$ с конечными \textbf{первыми} моментами
-$$\frac{\sum_{i=1}^n\xi_i}{n} - \frac{\sum_{i=1}^n\mathbb{E}\xi_i}{n} \overset{\mathbb{P}}{\to} 0$$
+$$\chi_\xi(t) = \mathbb{E}(e^{it\xi})$$
 
 \subsubsection*{Закон больших чисел Чебышева}
 Для \textbf{попарно независимых и одинаковораспределенных} 
@@ -54,9 +52,13 @@ $$\frac{\sum_{i=1}^n\xi_i}{n} \overset{\mathbb{P}}{\to} \mathbb{E}\xi_1$$
 $\{\xi_i\}_{i=1}^{\infty}$ с конечными \textbf{первыми} моментами
 $$\frac{\sum_{i=1}^n\xi_i}{n} \overset{\mathbb{P}}{\to} \mathbb{E}\xi_1$$	
 
+\subsubsection*{Закон больших чисел Маркова}
+Для \textbf{необязательно независимых и необязательно одинаковораспределенных} 
+$\{\xi_i\}_{i=1}^{\infty}$, для которых $\sum_{i=1}^{n}\mathbb{D}(\xi_i) = o(n^2)$
+$$\frac{\sum_{i=1}^n\xi_i}{n} \overset{\mathbb{P}}{\to} \mathbb{E}\xi_1$$
+
 \subsubsection*{Усиленный Закон больших чисел Колмогорова}
-Для \textbf{независимых в совокупности и необязательно одинаковораспределенных} 
-$\{\xi_i\}_{i=1}^{\infty}$, если $\sum_{i=1}^{n}\frac{\mathbb{D}\xi_i}{n^2} < \infty$, то
+Для тех же условий, что и обычные ЗБЧ
 $$\frac{\sum_{i=1}^n\xi_i}{n} \overset{\textrm{п.н.}}{\to} \mathbb{E}\xi_1$$	
 
 \subsubsection*{Классическая ЦПТ}
@@ -77,9 +79,17 @@ $$\frac{(\sum_{i=1}^n\xi_i) - n\mathbb{E}(\xi_1)}{\sqrt{n\mathbb{D}(\xi_1)}} \ov
 
 \item Пусть $\xi_n \overset{d}{\to} \xi$ и $g(x)$ - непрерывная функция. Докажите, что $g(\xi_n) \overset{d}{\to} g(\xi)$
 
-\item Пусть $E|\xi_n| \to E|\xi|$. Сходится ли $E|\xi_n + k| \to E|\xi+k|$?
+\item Если $\xi_n \overset{d}{\to} const$, то $\xi_n \overset{\mathbb{P}}{\to} const$
+
+\item Пусть $\{\xi_i\}_{i=1}^{\infty}$ - положительно определенные и $E|\xi_n - \xi| \to 0$. 
+Сходится ли $E|\xi_n + k| \to E|\xi+k|$ для k из $\mathbb{R_{+}}$. 
+Докажите, что в общем случае это не верно.
 
 \item Найти характеристические функции для кубика и экспоненциального распределения.
+
+\item (1)Пусть $\xi_n$ принимает значения $n$, $-n$, 0 c вероятностями:
+$\frac{1}{2\sqrt{n}}$, $\frac{1}{2\sqrt{n}}$, $1 - \frac{1}{\sqrt{n}}$
+Выполнен ли закон больших чисел?
 
 \item Пусть $\xi_1 \sim N(0,1)$. Положим $\chi_n^2 = \sum_{i=1}^{n}\xi_i^2$ и $\tau_n = \frac{\xi_{n+1}}{\sqrt{\frac{\chi_n^2}{n}}}$
 Найти предельное распределение величины $\tau$
@@ -89,23 +99,34 @@ $$\frac{(\sum_{i=1}^n\xi_i) - n\mathbb{E}(\xi_1)}{\sqrt{n\mathbb{D}(\xi_1)}} \ov
 \subsection*{Домашка}
 \begin{enumerate}
 
+\item (1)Пусть $\xi_n \overset{d}{\to} \xi$ и $\mu_n \overset{d}{\to} \mu$. Доказать, тчо
+$ \xi_n + \mu_n \overset{\textrm{d}}{\to} \xi + \mu$
+
 \item (1)Пусть $\xi_n \overset{d}{\to} \xi$ и $\mu_n \overset{d}{\to} \mu$. Для любой непрерывной функции f.
 $f(\xi_n,\mu_n) \overset{\textrm{d}}{\to} f(\xi, \mu)$
+
+\item (2)Пусть $\alpha > 0$ и $E|\xi_n|^\alpha < \infty$ при всех n. Доказать, что следующие
+утверждения эквивалентны:
+\begin{enumerate}
+\item $\xi_n \to \xi$ по вероятности и $E|\xi_n|^\alpha \to E|\xi|^\alpha < \infty$ при $n \to \infty$;
+\item $E|\xi_n - \xi|^\alpha \to 0$ при $n \to \infty$. 
+\end{enumerate}
+
+\item (1)Вычислить характеристическую функцию распределения Лапласа.
+
+\item (1)Пусть $\xi_n$ принимает значения $n^3$, $-n^3$, 0 c вероятностями:
+\begin{enumerate}
+\item $\frac{1}{2\sqrt{n}}$, $\frac{1}{2\sqrt{n}}$, $1 - \frac{1}{\sqrt{n}}$
+\item $\frac{1}{2n}$, $\frac{1}{2}$, $1 - \frac{1}{n}$
+\end{enumerate} 
+Выполнен ли закон больших чисел?
 
 \item (2)Пусть $\{\xi_n\}_{n=1}^{\infty}$ - последовательность независимых одинаково распределенных (н.о.р) случайных величин
 с конечной дисперсией. Доказать:
 $$\frac{\max{(\xi_1, \ldots, \xi_n)}}{\sqrt{n}} \overset{\textrm{d}}{\to} 0$$
 
-\item (2)Пусть $\alpha > 0$ и $E|\xi_n|^\alpha < \infty$ при всех n. Доказать, что следующие
-утверждения эквивалентны:
-1) $\xi_n \to \xi$ по вероятности и $E|\xi_n|^\alpha \to E|\xi|^\alpha < \infty$ при $n \to \infty$;
-2) $E|\xi_n - \xi|^\alpha \to 0$ при $n \to \infty$. 
-
-\item (1)Вычислить характеристическую функцию распределения Лапласа.
-
-
-\item (2)Пусть $\{\xi_i\}_{i=1}^{\infty}$ с конечными матожиданием $\mu$ и дисперсией $\sigma^2$. 
-Положим $\eta_n = \frac{\xi_1 + \ldots + \xi_n}{\xi_1^2 + \ldots + \xi_n^2}$. Доказать, что $\eta_n$ сходится по вероятности и найти этот предел.
+%\item (2)Пусть $\{\xi_i\}_{i=1}^{\infty}$ с конечными матожиданием $\mu$ и дисперсией $\sigma^2$. 
+%Положим $\eta_n = \frac{\xi_1 + \ldots + \xi_n}{\xi_1^2 + \ldots + \xi_n^2}$. Доказать, что $\eta_n$ сходится по вероятности и найти этот предел.
 
 
 %%\item Пусть случайные величины $\xi_1$, $\xi_2$, ... независимы в совокупности и $\xi_n \to 0$ п. н. 
