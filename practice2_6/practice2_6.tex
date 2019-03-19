@@ -1,0 +1,105 @@
+\documentclass[a4paper, 14pt]{extarticle}
+
+%% Language and font encodings
+\usepackage[english, russian]{babel}
+\usepackage[utf8]{inputenc}
+
+\usepackage[a4paper,top=1cm,bottom=1cm,left=1cm,right=1.5cm,margin=10mm, lmargin=15mm]{geometry}
+
+\usepackage{amsfonts,amssymb,amsmath}
+\usepackage{nopageno, comment}
+\usepackage{cmap}
+\usepackage{ifthen}
+\usepackage{indentfirst}
+\usepackage{float}
+\usepackage{tikz}
+\usepackage{wrapfig}
+
+\title{practice2_5}
+\author{Sam Stikhin}
+\date{February 2019}
+
+\begin{document}
+
+\section*{2.6 Статитстика! Оценки. Эмпирическая функция.}
+\subsection*{Пререквизиты}
+\subsubsection*{Состоятельная оценка}
+
+$$\hat\theta \xrightarrow{P} \theta$$
+
+\subsubsection*{Несмещенная оценка}
+
+$$\mathbb{E}[\hat\theta] \to \theta$$
+
+
+\subsubsection*{Эмпирическая функция распределения}
+
+$$\hat F_{n}(x) = \frac{\sum_{i=1}^{n}I(X_i<x)}{n}$$
+
+\subsubsection*{Параметры оценки}
+
+$$bias(\hat\theta) = \mathbb{E}[\hat\theta] - \theta$$
+
+$$se(\hat\theta) = \sqrt{\mathbb{D}[\hat\theta]}$$
+
+$$MSE = bias(\hat\theta)^2 + se(\hat\theta)^2$$
+\newpage
+\section*{2.6 Статитстика! Оценки. Эмпирическая функция.}
+\subsection*{Практика}
+\begin{enumerate}
+
+\item Пусть $\textbf{X} = \{X_1, X_2, \dots\}$ --- независимые одинаково распределенные (н.о.р.) случайные величины  с конечными средним 
+$\mu = \mathbb{E}[X_1]$ и 
+дисперсией $\sigma^2 = \mathbb{D}(X_1)$. Покажите, что величины
+$$
+\overline{\textbf{X}} = \frac{1}{n}\sum_{i=1}^n X_i, \qquad \hat S^2_n = \frac{1}{n - 1} \sum_{i=1}^n (X_i - \overline{\textbf{X}})^2.
+$$
+являются \textit{несмещенными} и \textit{состоятельными} оценками среднего $\mu$ и дисперсии $\sigma^2$, т.е. что
+\begin{itemize}
+	\item $\mathbb{E}[\overline{\textbf{X}}] = \mu$ и $\overline{\textbf{X}} \xrightarrow{\Prob} \mu$,
+	\item $\mathbb{E}[\hat S^2_n] = \sigma^2$ и $\hat S^2_n \xrightarrow{\Prob} \sigma^2$.
+\end{itemize}
+
+\item Для выборки из Пусть $\textbf{X} = \{X_1, X_2, \dots\} \sim U(0, \theta)$ проверить состоятельность и несмещённость оценки $\hat\theta = X_(n)$ - n-я порядковая статистика.
+
+\item Пусть $\textbf{X} = \{X_1, X_2, \dots\} \sim Poisson(\ln{\lambda}), \hat\lambda = e^{\overline{\textbf{X}}}$. Найдите bias, se и MSE этой оценки. Является
+ли оценка несмещенной оценкой параметра $\lambda$? Состоятельной?
+
+\item Для выборки из распределения F  найти: $\mathbb{E}[\hat F_n(x)]$, $\mathbb{D}[\hat F_n(x)]$
+
+
+
+\end{enumerate}
+\newpage
+\subsection*{Домашка}
+\begin{enumerate}
+
+
+\item (1)Пусть $\textbf{X} = \{X_1, X_2, \dots\} \sim U(0, \theta)$, $\hat\theta = 2^{\overline{\textbf{X}}}$. Найдите значения значения bias, se и MSE этой
+оценки. Является ли оценка несмещенной? Состоятельной?
+
+\item (1)Пусть  $\textbf{X} = \{X_1, X_2, \dots\} \sim U(a, b)$. Является ли оценка $\hat\theta_n = X_{(n)} - X_{(1)}$
+несмещённой оценкой длины отрезка $\theta = b - a$? Состоятельной?
+
+\item (1)Пусть $\textbf{X} = \{X_1, X_2, \dots\} \sim Poisson(\lambda)$. Для какого параметра $\theta = \theta(\lambda)$ оценка $\hat \theta \overline{X}e^{-\overline{X}}$
+состоятельной? Является ли $\hat \theta$ несмещенной оценкой? Найдите bias, se и MSE этой оценки.
+
+\item Для выборки из распределения F  найти: 
+\begin{enumerate}
+\item (1)$\mathbb{E}[\hat F_n(x) \hat F_n(y)]$
+\item (1)$\mathbb{D}[\hat F_n(x) - \hat F_n(y)]$ 
+\end{enumerate}
+
+\item (2)Доказать, что выборочное среднее  и выборочная дис-
+персия  некоррелированы, если третий момент выборки равен
+нулю. Указание: доказать, что $$Cov(\overline{X}, \hat S_n^2) = \frac{n-1}{n^2}
+E[X_1^3]$$
+
+\item (2)Пусть $\textbf{X} = \{X_1, X_2, \dots\} \sim \mathcal(\mu, \sigma^2)$, $\theta = e^{\mu}$ и $\hat \theta = e^{\overline{\textbf{X}}}$. 
+Найдите аналитически плотность распределения $p_{\hat\theta}(x)$ оценки $\hat \theta = e^{\overline{\textbf{X}}}$, 
+математическое ожидание $\mathbb{E}(\hat \theta)$,  и дисперсию $\mathbb{E}(\hat \theta)$, а также $bias$, $se$, $MSE$ оценки $\hat \theta$. 
+Является ли оценка $\hat \theta$ смещенной? Состоятельной?
+
+\end{enumerate}
+
+\end{document}
