@@ -1,0 +1,76 @@
+\documentclass[a4paper, 14pt]{extarticle}
+
+%% Language and font encodings
+\usepackage[english, russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+
+\usepackage[a4paper,top=1cm,bottom=1cm,left=1cm,right=1.5cm,margin=10mm, lmargin=15mm]{geometry}
+
+\title{practice2_7}
+\author{Sam Stikhin}
+\date{March 2019}
+
+\begin{document}
+
+\section*{2.7 Построение оценок. Метод моментов. Метод максимального правдоподобия}
+\section{Практика}
+\begin{enumerate}
+	\item Используя метод моментов, оцените параметр $\theta$ 	равномерного распределения на отрезке:
+	\begin{itemize}
+		\item $\left[\theta - 1; \theta + 1\right]$, $\theta \in R$
+		\item $\left[-\theta; \theta\right]$, $\theta > 0$.
+	\end{itemize}
+	
+	\item Пусть выборка $X_1, ..., X_n$ порождена распределением с плотностью $f(x)$:
+	\begin{center}
+		$f(x) = \begin{cases}
+			\frac{\beta \alpha^{\beta}}{x^{\beta + 1}}, x \ge \alpha\\
+			0, x < \alpha
+		\end{cases}$
+	\end{center}
+	Здесь $\alpha > 0$ и $\beta > 0$. С помощью метода максимального правдоподобия постройте оценку параметров $\alpha$ и $\beta$.
+	
+	\item Пусть выборка $X_1, ..., X_n$ порождена распределением с плотностью $f(x)$:
+	\begin{center}
+		$f(x) = \begin{cases}
+			\alpha e^{-\alpha\left(x - \beta\right)}, x \ge \beta\\
+			0, x < \beta
+		\end{cases}$
+	\end{center}
+	Здесь $\alpha > 0$. Постройте оценки параметров $\alpha$ и $\beta$ с помощью метода моментов и метода максимального правдоподобия.
+	
+	\item Пусть выборка $X_1, ..., X_n$ порождена распределением:
+	\begin{center}
+		$\begin{cases}
+			P(X_i = 1) = p_1\\
+			P(X_i = 2) = p_2\\
+			P(X_i = 3) = p_3\\
+		\end{cases}$
+	\end{center}
+	$p_1 + p_2 + p_3 = 1$. Постройте оценку параметров $p_1, p_2, p_3$ методом максимального правдоподобия.
+\end{enumerate}
+\newpage
+\section{Домашка}
+\begin{enumerate}
+	\item (1 балл) Используя метод моментов, постройте оценку $\lambda > 1$ по выборке из распределения Пуассона с параметром $\ln \lambda$. 
+	
+	\item (1 балл) Пусть выборка $X_1, ..., X_n$ порождена распределением с плотностью $f(x)$:
+	$$ f(x) = \frac{1}{\sqrt{2\pi}}e^{-\frac{\left(x - a\right)^2}{2}}$$
+	Параметр $a$ может принимать значения 1 или 2. Найдите оценку максимального правдоподобия параметра $a$.
+	
+	\item (1 балл) Пусть выборка $X_1, ..., X_n$ порождена распределением с плотностью $f_{\theta}(x)$: 
+	$f_{\theta}(x) = f(x - \theta)$,
+	 где функция $f(x)$ имеет единственный максимум в точке $x = 0$. Постройте оценку максимального правдоподобия
+	  $\hat \theta$ параметра сдвига $\theta$ по одному наблюдению $X_1$.
+	  
+	\item (1 балл) Пусть выборка $X_1, ..., X_n$ порождена распределением с плотностью $f(x)$: $$ f(x) = \frac{1}{2\sigma} e^{-\frac{\left|x - \mu\right|}{\sigma}}$$
+	Постройте оценку максимального правдоподобия для вектора параметров $\left(\mu, \sigma\right)$.
+	
+	\item Пусть выборка $X_1, ..., X_n$ порождена равномерным на отрезке $[\theta; 2\theta]$ распределением. Постройте оценку параметра $\theta$:
+		\begin{itemize}
+			\item (1 балл) Методом моментов.
+			\item (1 балл) Методом максимального правдоподобия.
+		\end{itemize}
+\end{enumerate}
+\end{document}
